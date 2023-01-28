@@ -1,9 +1,18 @@
 
+
+// SELECT ELEMENTS IN HTML 
  let showScore = document.querySelector('.scores');
  let showDisplay = document.querySelector('.display');
  let showResult = document.querySelector('.show-result');
 
+
+// SCORE OBJECT  
+
 let totalScore = {playerScore : 0, computerScore : 0}
+
+
+
+// COMPUTER FUNCTION 
 
 function getComputerChoice() {
       let randomText = ['Rock', 'Paper', 'Scissors']
@@ -13,7 +22,7 @@ function getComputerChoice() {
       return randomText[randomNum]
 }
 
-
+// GET THE RESULT OR SCORE FUNCTION 
 
 function getResult (playerChoice, computerChoice) {
       let score = 0
@@ -33,8 +42,10 @@ function getResult (playerChoice, computerChoice) {
       return score;
 }
 
+
+// MAIN PLAY GAME FUNCTION 
+
 function playGame() {
-      
 
 let btns = document.querySelectorAll('.btn');
 
@@ -59,6 +70,7 @@ btns.forEach( btn => {
 playGame()
 
 
+// DISPLAY  FUNCTION 
 function showGame(score, playerChoice,computerChoice) {
 
      
@@ -78,6 +90,8 @@ function showGame(score, playerChoice,computerChoice) {
       showResult.innerHTML = ` Your Scores: ${totalScore['playerScore']}`
 }
 
+
+// CLEAR BUTTON 
 document.getElementsByClassName('playBtn')[0].addEventListener('click', () => {
 
       totalScore['playerScore'] = 0
